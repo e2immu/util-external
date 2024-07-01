@@ -37,6 +37,7 @@ public class EventuallyFinalOnDemand<T> {
         }
         this.isFinal = true;
         this.value = value;
+        this.onDemand = null;
     }
 
     public void setVariable(T value) {
@@ -45,7 +46,7 @@ public class EventuallyFinalOnDemand<T> {
     }
 
     public void setOnDemand(Runnable onDemand) {
-        assert !isFinal;
+        assert !isFinal && this.onDemand == null;
         this.onDemand = onDemand;
     }
 
@@ -59,9 +60,5 @@ public class EventuallyFinalOnDemand<T> {
 
     public boolean haveOnDemand() {
         return onDemand != null;
-    }
-
-    public boolean onDemandHasNotYetBeenTriggered() {
-        return onDemand != null && value == null;
     }
 }
