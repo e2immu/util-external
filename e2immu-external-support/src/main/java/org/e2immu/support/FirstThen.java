@@ -40,6 +40,11 @@ public class FirstThen<S, T> {
     @Final(after = "first")
     private volatile T then;
 
+    private FirstThen(S s, T t) {
+        this.first = s;
+        this.then = t;
+    }
+
     /**
      * Constructor, start in the <em>before</em> state
      *
@@ -47,7 +52,11 @@ public class FirstThen<S, T> {
      * @throws NullPointerException when the argument is <code>null</code>
      */
     public FirstThen(@NotNull S first) {
-        this.first = Objects.requireNonNull(first);
+        this(Objects.requireNonNull(first), null);
+    }
+
+    public static <S, T> FirstThen<S, T> then(T t) {
+        return new FirstThen<>(null, Objects.requireNonNull(t));
     }
 
     /**
@@ -135,7 +144,7 @@ public class FirstThen<S, T> {
         if (o == null || getClass() != o.getClass()) return false;
         FirstThen<?, ?> firstThen = (FirstThen<?, ?>) o;
         return Objects.equals(first, firstThen.first) &&
-                Objects.equals(then, firstThen.then);
+               Objects.equals(then, firstThen.then);
     }
 
     /**

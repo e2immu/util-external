@@ -34,7 +34,7 @@ public class TestFirstThen {
         assertTrue(a.isFirst());
         assertFalse(a.isSet());
         a.set(34);
-        assertEquals((Integer)34, a.get());
+        assertEquals((Integer) 34, a.get());
         try {
             a.getFirst();
             fail();
@@ -54,5 +54,13 @@ public class TestFirstThen {
         assertNotEquals(b, a);
         b.set(34);
         assertEquals(b, a);
+    }
+
+    @Test
+    public void test2() {
+        FirstThen<Integer, String> a = FirstThen.then("a");
+        assertTrue(a.isSet());
+        assertFalse(a.isFirst());
+        assertEquals("a", a.get());
     }
 }
