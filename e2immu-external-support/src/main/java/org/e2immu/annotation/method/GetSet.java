@@ -73,6 +73,9 @@ public @interface GetSet {
      */
     String defaultValue() default "";
 
+    // see GetSetEquivalent
+    boolean equivalent() default false;
+
     enum TrueFalseIgnore {TRUE, FALSE, IGNORE}
 
     /*
