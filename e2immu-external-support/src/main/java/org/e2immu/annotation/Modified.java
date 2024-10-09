@@ -61,8 +61,14 @@ public @interface Modified {
      */
     boolean construction() default false;
 
+    /*
+    names of components that are modified.
+
+     */
+    String[] value() default {};
+
     /**
-     * Used the formal type is mutable, with hidden content, and at least one of the hidden content types
+     * Used when the formal type is mutable, with hidden content, and at least one of the hidden content types
      * has been substituted for a mutable type in the concrete type.
      * The parameter indicates that the mutable part of the variable has been modified, and also that the part
      * corresponding to the hidden content index has been modified.
@@ -75,7 +81,7 @@ public @interface Modified {
     int[] alsoHcs() default {};
 
     /**
-     * Used the formal type is mutable, with hidden content, and at least one of the hidden content types
+     * Used when the formal type is mutable, with hidden content, and at least one of the hidden content types
      * has been substituted for a mutable type in the concrete type.
      * The parameter indicates that the mutable part of the variable has <b>not</b> been modified; however, the part
      * corresponding to the hidden content index has been modified.
