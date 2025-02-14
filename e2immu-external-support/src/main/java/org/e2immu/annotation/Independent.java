@@ -97,4 +97,8 @@ public @interface Independent {
      */
     boolean dependentReturnValue() default false;
 
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

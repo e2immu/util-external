@@ -92,4 +92,9 @@ public @interface Modified {
      * @return the hidden content indices, starting from 0.
      */
     int[] onlyHcs() default {};
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

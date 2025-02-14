@@ -58,4 +58,9 @@ public @interface Mark {
      * @return The name of the mark.
      */
     String value();
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

@@ -62,4 +62,9 @@ public @interface Only {
      * @return the name of the mark
      */
     String after() default "";
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

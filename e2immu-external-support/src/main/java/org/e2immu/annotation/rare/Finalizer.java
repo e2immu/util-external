@@ -44,4 +44,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.METHOD)
 public @interface Finalizer {
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

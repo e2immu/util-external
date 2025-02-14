@@ -83,4 +83,9 @@ public @interface GetSet {
     0 or 0.0 in its forms for primitives, and null for objects.
      */
     TrueFalseIgnore naturalDefaultValue() default TrueFalseIgnore.IGNORE;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

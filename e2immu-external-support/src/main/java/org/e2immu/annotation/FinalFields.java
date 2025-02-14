@@ -74,4 +74,9 @@ public @interface FinalFields {
      * @return true when the annotation is not really necessary
      */
     boolean implied() default false;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

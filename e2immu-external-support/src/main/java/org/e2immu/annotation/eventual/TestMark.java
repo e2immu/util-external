@@ -60,4 +60,9 @@ public @interface TestMark {
      * @return <code>true</code> when the meaning has been inverted.
      */
     boolean before() default false;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

@@ -66,4 +66,9 @@ public @interface ExtensionClass {
      * @return The type being extended.
      */
     Class<?> of();
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

@@ -51,4 +51,9 @@ public @interface Nullable {
      * @return <code>true</code> when the annotation is implied; this is the default situation
      */
     boolean implied() default true;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

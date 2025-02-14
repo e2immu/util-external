@@ -39,4 +39,9 @@ public @interface AllowsInterrupt {
      * @return <code>true</code> when the method allows for interrupts.
      */
     boolean value() default true;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }

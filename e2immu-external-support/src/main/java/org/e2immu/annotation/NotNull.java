@@ -60,4 +60,9 @@ public @interface NotNull {
      * @return <code>true</code> in case of primitives, which cannot be null
      */
     boolean implied() default false;
+
+    /**
+     * Any explanation for the presence of this annotion in this particular place.
+     */
+    String comment() default "";
 }
