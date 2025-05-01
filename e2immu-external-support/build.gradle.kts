@@ -26,10 +26,7 @@ repositories {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-tasks.jar {
-    from(sourceSets.main.get().allSource)
+    withSourcesJar()
 }
 
 tasks.test {
@@ -56,14 +53,13 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
 
-            artifactId = "e2immu-support"
-            groupId = "org.e2immu"
-            version = "0.6.4"
-
             pom {
-                name = "e2immu graph support"
+                name = "e2immu external support"
                 description = "Helper library for the use with the e2immu analyser"
                 url = "https://e2immu.org"
+                scm {
+                    url = "https://github.com/e2immu"
+                }
                 licenses {
                     license {
                         name = "GNU Lesser General Public License, version 3.0"
