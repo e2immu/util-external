@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  * This annotation is always contracted, never computed.
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
 public @interface IgnoreModifications {
     // contract: true, absent: false
 
