@@ -1,5 +1,4 @@
 module org.e2immu.util.external.support {
-    requires java.base;
     exports org.e2immu.annotatedapi;
     exports org.e2immu.annotation;
     exports org.e2immu.annotation.eventual;
