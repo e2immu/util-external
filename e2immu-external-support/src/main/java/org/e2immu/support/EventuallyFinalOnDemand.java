@@ -14,18 +14,17 @@
 
 package org.e2immu.support;
 
-import java.util.function.Supplier;
-
 public class EventuallyFinalOnDemand<T> {
     private T value;
     private boolean isFinal;
     private volatile Runnable onDemand;
 
     // not synchronized: we'll be calling get() from inside the runnable
+    // it is important that only setFinal can clear onDemand, and set isFinal at the same time
+    // no value should be returned as long as onDemand != null
     public T get() {
-        if (onDemand != null) {
-            Runnable runnable = onDemand;
-            onDemand = null; // remove the supplier, we'll call on-demand exactly once
+        Runnable runnable = onDemand;
+        if (runnable != null) {
             runnable.run();
         }
         return value;
